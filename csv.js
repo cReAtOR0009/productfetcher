@@ -1,6 +1,7 @@
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const path = require('path');
 
+// fetched data to be converted to csv
 const data = [
     {
         "title": "JERK CHICKEN",
@@ -1128,26 +1129,27 @@ async function writeDataToCSV(data) {
 writeDataToCSV(data);
 
 
-// function extractProductData() {
-//     const productContainers = document.querySelectorAll('a.al.ek.cz.d4.r3.r4.r5');
-//     const products = Array.from(productContainers).map((container, index) => {
-//       const productLink = productContainers[index].getAttribute('href');
-//       const titleElement = container.querySelector('.dc.dd.de.kd.ke.m4.bb span');
-//       const priceElement = container.querySelector('.lx.al.ca.hf span');
-//       const descriptionElement = container.querySelector('.lx.kd.kf.ke.bb.r9.ex span');
-//       const imageElement = container.querySelector('img');
+//this function runs in browser console and fetch the data needed
+function extractProductData() {
+    const productContainers = document.querySelectorAll('a.al.ek.cz.d4.r3.r4.r5');
+    const products = Array.from(productContainers).map((container, index) => {
+      const productLink = productContainers[index].getAttribute('href');
+      const titleElement = container.querySelector('.dc.dd.de.kd.ke.m4.bb span');
+      const priceElement = container.querySelector('.lx.al.ca.hf span');
+      const descriptionElement = container.querySelector('.lx.kd.kf.ke.bb.r9.ex span');
+      const imageElement = container.querySelector('img');
   
-//       return {
-//         title: titleElement ? titleElement.innerText.trim() : null,
-//         price: priceElement ? priceElement.innerText.trim() : null,
-//         description: descriptionElement ? descriptionElement.innerText.trim() : null,
-//         productLink:productLink? `https://www.ubereats.com/${productLink}`: null,
-//         imageUrl: imageElement ? imageElement.src : null,
-//       };
-//     });
+      return {
+        title: titleElement ? titleElement.innerText.trim() : null,
+        price: priceElement ? priceElement.innerText.trim() : null,
+        description: descriptionElement ? descriptionElement.innerText.trim() : null,
+        productLink:productLink? `https://www.ubereats.com/${productLink}`: null,
+        imageUrl: imageElement ? imageElement.src : null,
+      };
+    });
   
-//     console.log(products);
-//     return products;
-//   }
+    console.log(products);
+    return products;
+  }
   
 //   extractProductData()
