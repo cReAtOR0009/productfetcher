@@ -1,7 +1,12 @@
 {
+  "name": "product-scraper-api",
+  "version": "1.0.0",
+  "description": "A web scraper and API to fetch product details and save them as a CSV file.",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "manual": "node csv.js"
   },
   "dependencies": {
     "csv-writer": "^1.6.0",
@@ -11,5 +16,7 @@
     "puppeteer": "^22.9.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
-  }
+  },
+  "author": "Creator",
+  "license": "MIT"
 }
